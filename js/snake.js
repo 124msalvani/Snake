@@ -25,6 +25,7 @@ export function draw(gameBoard) {
         snakeElement.classList.add('snake')
         gameBoard.appendChild(snakeElement)
     })
+
 }
 
 export function expandSnake(amount){
