@@ -17,14 +17,28 @@ body{
     grid-template-columns: repeat(21, 1fr);
 }
 
+.movingup{
+    border-bottom-left-radius: 20px 20px;
+    border-bottom-right-radius: 20px 20px;
+}
+
+
+
 .snake{
     background-color: hsl(200,100%,50%);
     border: .25vmin solid black;
 }
 
-.food{
-    background-color: hsl(50, 100%, 50%);
+.snakehead{
+    background-color: hsl(227, 84%, 10%);
     border: .25vmin solid black;
+    border-bottom: 20px;
+}
+
+.food{
+    background-color: hsl(0, 89%, 47%);
+    border: .25vmin solid black;
+    border-radius: 20px;
 }
 
 #scoreboard{
