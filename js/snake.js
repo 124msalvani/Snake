@@ -21,7 +21,7 @@ export function update() {
     snakeBody[0].y += inputDirection.y
 
    console.log(inputDirection.x)
-   if (inputDirection.x = 1){
+   if (inputDirection.x == 1){
         document.getElementById("head").classList.add("movingdown");
    }
    console.log(inputDirection.y)
