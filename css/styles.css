@@ -17,22 +17,24 @@ body{
     grid-template-columns: repeat(21, 1fr);
 }
 
-.movingup{
+.movingdown{
     border-bottom-left-radius: 20px 20px;
     border-bottom-right-radius: 20px 20px;
 }
 
-
+.movingup{
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+}
 
 .snake{
     background-color: hsl(200,100%,50%);
     border: .25vmin solid black;
 }
 
-.snakehead{
+#head{
     background-color: hsl(227, 84%, 10%);
     border: .25vmin solid black;
-    border-bottom: 20px;
 }
 
 .food{

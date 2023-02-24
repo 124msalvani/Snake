@@ -1,6 +1,6 @@
 import { getInputDirection } from "./input.js";
 
-export const SNAKE_SPEED = 3
+export const SNAKE_SPEED = 0.5
 
 
 const snakeBody = [
@@ -16,9 +16,15 @@ export function update() {
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = {...snakeBody[i]}
     }
-
+    
     snakeBody[0].x += inputDirection.x
     snakeBody[0].y += inputDirection.y
+
+   console.log(inputDirection.x)
+   if (inputDirection.x = 1){
+        document.getElementById("head").classList.add("movingdown");
+   }
+   console.log(inputDirection.y)
 }
 
 export function draw(gameBoard) {
@@ -38,16 +44,11 @@ export function draw(gameBoard) {
 
     function snakeHeadTest(){
         console.log(snakeHead);
-        document.getElementById("head").style.backgroundColor = "yellow";
-        // snakeHead.classList.add('snakehead');
-        // snakeHead.classList.remove('snake');
+        // document.getElementById("head").style.backgroundColor = "yellow";
+        
     };
     
     snakeHeadTest();
-    var xyz= document.getElementsByClassName("snake");
-    var zyx = document.getElementsByClassName("snakehead");
-    console.log(zyx);
-    console.log(xyz);
 };
 
 export function expandSnake(amount){
@@ -62,7 +63,6 @@ export function onSnake(position, {ignoreHead = false} = {}){
 };
 
 export function getSnakeHead(){
-
     return snakeHead;
 }
 
