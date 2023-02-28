@@ -9,7 +9,7 @@ body{
 }
 
 #game-board{
-    background-color: #ccc;
+    background: url(../img/nightforest1.jpg);
     width: 100vmin;
     height: 100vmin;
     display: grid;
@@ -27,21 +27,65 @@ body{
     border-top-right-radius: 20px 20px;
 }
 
+.movingleft{
+    border-top-left-radius: 20px 20px;
+    border-bottom-left-radius: 20px 20px;
+}
+
+.movingright{
+    border-bottom-right-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+}
+
 .snake{
     background-color: hsl(200,100%,50%);
     border: .25vmin solid black;
+    box-shadow: 0 0 100px 15px #ffffff4f;
 }
 
 #head{
     background-color: hsl(227, 84%, 10%);
     border: .25vmin solid black;
+    box-shadow: 0 0 80px 15px #e8f4fb;
 }
 
+    @keyframes wiggle {
+        0%, 7% {
+          transform: rotateZ(0);
+        }
+        15% {
+          transform: rotateZ(-15deg);
+        }
+        20% {
+          transform: rotateZ(10deg);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        30% {
+          transform: rotateZ(6deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        40%, 100% {
+          transform: rotateZ(0);
+        }
+      }
+
+
 .food{
-    background-color: hsl(0, 89%, 47%);
-    border: .25vmin solid black;
-    border-radius: 20px;
+    background: url(../img/firefly.png) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: wiggle 1s linear infinite;
+    animation-delay: 2s;
+    border-radius: 100px;
+    box-shadow: 0 0 100px 15px #ffff004f;
 }
+
+
+
 
 #scoreboard{
     color: white;

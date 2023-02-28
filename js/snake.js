@@ -1,6 +1,6 @@
 import { getInputDirection } from "./input.js";
-
-export const SNAKE_SPEED = 0.5
+var inputDirection = getInputDirection();
+export const SNAKE_SPEED = 3
 
 
 const snakeBody = [
@@ -12,7 +12,7 @@ var snakeHead = snakeBody [0];
 let newSegments = 0;
 export function update() {
     addSegments();
-    const inputDirection = getInputDirection()
+    inputDirection = getInputDirection()
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = {...snakeBody[i]}
     }
@@ -20,11 +20,10 @@ export function update() {
     snakeBody[0].x += inputDirection.x
     snakeBody[0].y += inputDirection.y
 
-   console.log(inputDirection.x)
-   if (inputDirection.x == 1){
-        document.getElementById("head").classList.add("movingdown");
-   }
-   console.log(inputDirection.y)
+   console.log(inputDirection.x);
+   console.log(inputDirection.y);
+    
+   
 }
 
 export function draw(gameBoard) {
@@ -35,11 +34,26 @@ export function draw(gameBoard) {
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
         snakeElement.classList.add('snake')
+        
         if(index == 0)
         {
             snakeElement.setAttribute('id', 'head')
+            if (inputDirection.y == 1){
+                snakeElement.classList.add("movingdown");
+            }
+            if (inputDirection.y == -1){
+                snakeElement.classList.add("movingup");
+            }
+            if (inputDirection.x == 1){
+                snakeElement.classList.add("movingright");
+            }
+            if (inputDirection.x == -1){
+                snakeElement.classList.add("movingleft");
+            }
         }
         gameBoard.appendChild(snakeElement)
+
+        
     });
 
     function snakeHeadTest(){
