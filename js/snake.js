@@ -8,6 +8,7 @@ const snakeBody = [
 ]
 
 var snakeHead = snakeBody [0];
+var click = 1;
 
 let newSegments = 0;
 export function update() {
@@ -16,7 +17,8 @@ export function update() {
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = {...snakeBody[i]}
     }
-    
+
+
     snakeBody[0].x += inputDirection.x
     snakeBody[0].y += inputDirection.y
 
@@ -25,6 +27,8 @@ export function update() {
     
    
 }
+
+
 
 export function draw(gameBoard) {
     // console.log('draw snake')
@@ -52,6 +56,14 @@ export function draw(gameBoard) {
             }
         }
         gameBoard.appendChild(snakeElement)
+
+        document.getElementById("head").addEventListener("click", changeColor);
+        function changeColor(){
+            click ++;
+            if (click == 2){
+                snakeBody.style.backgroundColor = "yellow"
+            }
+        }
 
         
     });
